@@ -1,0 +1,16 @@
+/*.debhelper
+/*.log
+/*.substvars
+/files
+
+/lxqt-globalkeys/
+/liblxqt-globalkeys0/
+/liblxqt-globalkeys0-dev/
+/liblxqt-globalkeys-ui0/
+/liblxqt-globalkeys-ui0-dev/
+/lxqt-globalkeys-qt5
+/liblxqt-globalkeys-qt5-0
+/liblxqt-globalkeys-qt5-0-dev
+/liblxqt-globalkeys-ui-qt5-0
+/liblxqt-globalkeys-ui-qt5-0-dev
+/tmp
