@@ -150,6 +150,7 @@ private slots:
     void shortcutGrabTimedout();
 
 private:
+    bool enableActionNonGuarded(qulonglong id, bool enabled);
     QPair<QString, qulonglong> addOrRegisterClientAction(const QString &shortcut, const QDBusObjectPath &path, const QString &description, const QString &sender);
     qulonglong registerClientAction(const QString &shortcut, const QDBusObjectPath &path, const QString &description);
     qulonglong registerMethodAction(const QString &shortcut, const QString &service, const QDBusObjectPath &path, const QString &interface, const QString &method, const QString &description);
@@ -218,6 +219,7 @@ private:
     X11ByShortcut mX11ByShortcut;
     ShortcutByX11 mShortcutByX11;
     IdsByShortcut mIdsByShortcut;
+    IdsByShortcut mDisabledIdsByShortcut;
     ShortcutAndActionById mShortcutAndActionById;
     IdByClientPath mIdByClientPath;
     SenderByClientPath mSenderByClientPath; // add: path->sender
