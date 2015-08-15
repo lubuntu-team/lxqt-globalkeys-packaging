@@ -29,7 +29,7 @@ Replaces: lxqt-globalkeys-qt5 (<< 0.9.0)
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
-Description: Daemon used to register global keyboard shortcuts (appl.)
+Description: daemon used to register global keyboard shortcuts (appl.)
  Daemon used to register global keyboard shortcuts.
  .
  This package contain the program files for LXQt globalskeys.
@@ -43,7 +43,7 @@ Depends:
  ${misc:Pre-Depends},
  ${misc:Depends},
  ${shlibs:Depends},
-Description: Daemon used to register global keyboard shortcuts (shared libs)
+Description: daemon used to register global keyboard shortcuts (shared libs)
  Daemon used to register global keyboard shortcuts.
  .
  This package contain the shared libs for LXQt globalkeys.
@@ -57,7 +57,7 @@ Depends:
  ${misc:Depends},
  ${shlibs:Depends},
  liblxqt-globalkeys0 (= ${binary:Version}),
-Description: Daemon used to register global keyboard shortcuts (dev files)
+Description: daemon used to register global keyboard shortcuts (dev files)
  Daemon used to register global keyboard shortcuts.
  .
  This package contain the development files.
@@ -72,7 +72,7 @@ Depends:
  ${misc:Depends},
  ${shlibs:Depends},
  liblxqt-globalkeys0 (= ${binary:Version}),
-Description: Daemon used to register global keyboard shortcuts (ui files)
+Description: daemon used to register global keyboard shortcuts (ui files)
  Daemon used to register global keyboard shortcuts.
  .
  This package contain the ui for LXQt globalkeys.
@@ -86,7 +86,7 @@ Depends:
  ${misc:Depends},
  ${shlibs:Depends},
  liblxqt-globalkeys-ui0 (= ${binary:Version}),
-Description: Daemon used to register global keyboard shortcuts (ui dev files)
+Description: daemon used to register global keyboard shortcuts (ui dev files)
  Daemon used to register global keyboard shortcuts.
  .
  This package contain the ui development files.
