@@ -62,7 +62,7 @@ Description: Daemon used to register global keyboard shortcuts (dev files)
  .
  This package contain the development files.
 
-Package: liblxqt-globalkeys-ui0 
+Package: liblxqt-globalkeys-ui0
 Architecture: any
 Section: libs
 Breaks: liblxqt-globalkeys-ui-qt5-0 (<< 0.9.0)
@@ -90,4 +90,3 @@ Description: Daemon used to register global keyboard shortcuts (ui dev files)
  Daemon used to register global keyboard shortcuts
  .
  This package contain the ui development files.
-
