@@ -62,8 +62,10 @@ public:
     QString description() const;
 
     bool isValid() const;
+    bool isRegistrationPending() const;
 
 signals:
+    void registrationFinished();
     void activated();
     void shortcutChanged(const QString &oldShortcut, const QString &newShortcut);
 

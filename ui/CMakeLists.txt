@@ -6,14 +6,6 @@ set(QT_DBUS_PREFIX "org.qtproject")
 set(LXQT_GLOBALKEYS_LIBRARY lxqt-globalkeys)
 set(${PROJECT_NAME}_HEADER_NAMESPACE "LXQtGlobalKeysUi")
 
-include_directories(
-    "${PROJECT_SOURCE_DIR}"
-    "${CMAKE_CURRENT_BINARY_DIR}"
-    ${LXQT_INCLUDE_DIRS}
-)
-
-add_definitions(-DSHARED_EXPORT=Q_DECL_EXPORT)
-
 set(${PROJECT_NAME}_SOURCES
     shortcut_selector.cpp
 )
@@ -23,7 +15,7 @@ set(${PROJECT_NAME}_MAIN_HEADER
 
 #
 # WARNING: Changing stuff here implies changing this:
-#install(FILES ${${PROJECT_NAME}_PUBLIC_HEADERS} DESTINATION include/${PROJECT_NAME} COMPONENT development RENAME "shortcutselector.h")
+#install(FILES ${${PROJECT_NAME}_PUBLIC_HEADERS} DESTINATION include/${PROJECT_NAME} COMPONENT Devel RENAME "shortcutselector.h")
 #
 set(${PROJECT_NAME}_PUBLIC_CPP_HEADERS
     shortcut_selector.h
@@ -101,7 +93,7 @@ foreach(DBUS_INTERFACE ${${PROJECT_NAME}_DBUS_INTERFACES})
     get_filename_component(DBUS_INTERFACE_FILENAME ${DBUS_INTERFACE} NAME)
     configure_file(
         ${DBUS_INTERFACE}
-        ${CMAKE_CURRENT_BINARY_DIR}/${DBUS_INTERFACE_FILENAME}
+        "${CMAKE_CURRENT_BINARY_DIR}/${DBUS_INTERFACE_FILENAME}"
         @ONLY
     )
     get_source_file_property(DBUS_INTERFACE_BASENAME ${DBUS_INTERFACE} BASENAME)
@@ -113,11 +105,10 @@ foreach(DBUS_INTERFACE ${${PROJECT_NAME}_DBUS_INTERFACES})
         CLASSNAME ${DBUS_INTERFACE_CLASSNAME}
         NO_NAMESPACE ${DBUS_INTERFACE_NO_NAMESPACE}
     )
-    qt5_add_dbus_interface(${PROJECT_NAME}_DBUS_INTERFACE_FILES ${CMAKE_CURRENT_BINARY_DIR}/${DBUS_INTERFACE_FILENAME} ${DBUS_INTERFACE_BASENAME})
+    qt5_add_dbus_interface(${PROJECT_NAME}_DBUS_INTERFACE_FILES "${CMAKE_CURRENT_BINARY_DIR}/${DBUS_INTERFACE_FILENAME}" ${DBUS_INTERFACE_BASENAME})
 endforeach()
 
 qt5_add_resources(${PROJECT_NAME}_RESOURCE_FILES ${${PROJECT_NAME}_RESOURCES})
-qt5_wrap_ui(${PROJECT_NAME}_FORM_FILES ${${PROJECT_NAME}_FORMS})
 
 set(${PROJECT_NAME}_GENERATED_FILES
     ${${PROJECT_NAME}_FORM_FILES}
@@ -133,17 +124,34 @@ set(${PROJECT_NAME}_ALL_FILES
     ${${PROJECT_NAME}_GENERATED_FILES}
 )
 
+set(${PROJECT_NAME}_PKG_CONFIG_REQUIRES "Qt5Widgets, Qt5DBus, ${LXQT_GLOBALKEYS_LIBRARY}")
+
 add_library(${PROJECT_NAME} SHARED ${${PROJECT_NAME}_ALL_FILES})
 target_link_libraries(${PROJECT_NAME}
-    Qt5::Widgets
-    Qt5::DBus
-    ${LXQT_GLOBALKEYS_LIBRARY}
+    PUBLIC
+        Qt5::Widgets
+        Qt5::DBus
+        ${LXQT_GLOBALKEYS_LIBRARY}
 )
 set_target_properties(${PROJECT_NAME}
     PROPERTIES
     VERSION ${LXQT_VERSION}
     SOVERSION ${LXQT_MAJOR_VERSION}
 )
+target_include_directories(${PROJECT_NAME}
+    INTERFACE "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/${LXQT_GLOBALKEYS_UI_LIBRARY_NAME}>"
+)
+
+target_include_directories(${PROJECT_NAME}
+    INTERFACE "$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_FILES_DIRECTORY}/include>"
+    INTERFACE "$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_FILES_DIRECTORY}/include/${PROJECT_NAME}>"
+)
+
+target_compile_definitions(${PROJECT_NAME}
+    PRIVATE "SHARED_EXPORT=Q_DECL_EXPORT"
+)
+
+export(TARGETS ${PROJECT_NAME} APPEND FILE "${CMAKE_BINARY_DIR}/${PROJECT_NAME}-targets.cmake")
 
 include(create_portable_headers)
 create_portable_headers(${PROJECT_NAME}_PORTABLE_HEADERS
@@ -151,11 +159,62 @@ create_portable_headers(${PROJECT_NAME}_PORTABLE_HEADERS
     FILENAMES ${${PROJECT_NAME}_PUBLIC_CLASSES}
 )
 
-install(TARGETS ${PROJECT_NAME} DESTINATION ${LIB_INSTALL_DIR} COMPONENT runtime)
-install(FILES ${${PROJECT_NAME}_PUBLIC_HEADERS} DESTINATION include/${PROJECT_NAME} COMPONENT development)
-install(FILES ${${PROJECT_NAME}_PUBLIC_HEADERS} DESTINATION include/${PROJECT_NAME} COMPONENT development RENAME "shortcutselector.h")
-install(FILES ${${PROJECT_NAME}_PORTABLE_HEADERS} DESTINATION include/${PROJECT_NAME}/${${PROJECT_NAME}_HEADER_NAMESPACE} COMPONENT development)
+# Copy public headers for intree building
+foreach(h ${${PROJECT_NAME}_PUBLIC_HEADERS})
+    get_filename_component(bh ${h} NAME)
+    configure_file("${h}" "${CMAKE_CURRENT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/include/${PROJECT_NAME}/${bh}" COPYONLY)
+endforeach()
+
+foreach(h ${${PROJECT_NAME}_PORTABLE_HEADERS})
+    get_filename_component(bh ${h} NAME)
+    configure_file("${h}" "${CMAKE_CURRENT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/include/${PROJECT_NAME}/${${PROJECT_NAME}_HEADER_NAMESPACE}/${bh}" COPYONLY)
+endforeach()
+
+foreach(h ${${PROJECT_NAME}_PUBLIC_HEADERS})
+    get_filename_component(bh ${h} NAME)
+    configure_file("${h}" "${CMAKE_CURRENT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/include/${PROJECT_NAME}/shortcutselector.h" COPYONLY)
+endforeach()
+
+install(TARGETS
+    ${PROJECT_NAME}
+    DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+    EXPORT ${PROJECT_NAME}-targets
+    COMPONENT Runtime
+)
+
+install(EXPORT
+    ${PROJECT_NAME}-targets
+    DESTINATION "${LXQT_INSTALL_CMAKE_DIR}/${LXQT_GLOBALKEYS_UI_CMAKE_NAME}"
+    COMPONENT Devel
+)
+
+install(FILES
+    ${${PROJECT_NAME}_PUBLIC_HEADERS}
+    DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}"
+    COMPONENT Devel
+)
+
+install(FILES
+    ${${PROJECT_NAME}_PUBLIC_HEADERS}
+    DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}"
+    COMPONENT Devel
+    RENAME "shortcutselector.h"
+)
+
+install(FILES
+    ${${PROJECT_NAME}_PORTABLE_HEADERS}
+    DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/${${PROJECT_NAME}_HEADER_NAMESPACE}"
+    COMPONENT Devel
+)
 
 
-include(create_pkgconfig_file)
-create_pkgconfig_file(${PROJECT_NAME} "LXQt global key shortcuts GUI support library")
+lxqt_create_pkgconfig_file(
+    PACKAGE_NAME ${PROJECT_NAME}
+    DESCRIPTIVE_NAME ${PROJECT_NAME}
+    DESCRIPTION "LXQt global key shortcuts GUI support library"
+    INCLUDEDIRS ${PROJECT_NAME}
+    LIBS ${PROJECT_NAME}
+    REQUIRES ${${PROJECT_NAME}_PKG_CONFIG_REQUIRES}
+    VERSION ${LXQT_VERSION}
+    INSTALL
+)

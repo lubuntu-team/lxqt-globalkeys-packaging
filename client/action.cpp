@@ -41,9 +41,11 @@ ActionImpl::ActionImpl(ClientImpl *client, Action *interface, const QString &pat
     , mInterface(interface)
     , mPath(path)
     , mDescription(description)
+    , mRegistrationPending(false)
 {
     new OrgLxqtActionClientAdaptor(this);
 
+    connect(this, SIGNAL(emitRegistrationFinished()), mInterface, SIGNAL(registrationFinished()));
     connect(this, SIGNAL(emitActivated()), mInterface, SIGNAL(activated()));
     connect(this, SIGNAL(emitShortcutChanged(QString, QString)), mInterface, SIGNAL(shortcutChanged(QString, QString)));
 }
@@ -55,12 +57,18 @@ ActionImpl::~ActionImpl()
 
 QString ActionImpl::changeShortcut(const QString &shortcut)
 {
+    if (mRegistrationPending)
+        return mShortcut;
+
     mShortcut = mClient->changeClientActionShortcut(mPath, shortcut);
     return mShortcut;
 }
 
 bool ActionImpl::changeDescription(const QString &description)
 {
+    if (mRegistrationPending)
+        return false;
+
     bool result = mClient->modifyClientAction(mPath, description);
     if (result)
     {
@@ -97,6 +105,19 @@ void ActionImpl::setValid(bool valid)
 bool ActionImpl::isValid() const
 {
     return mValid;
+}
+
+void ActionImpl::setRegistrationPending(bool registrationPending)
+{
+    mRegistrationPending = registrationPending;
+    if (!mRegistrationPending)
+        emit emitRegistrationFinished();
+
+}
+
+bool ActionImpl::isRegistrationPending() const
+{
+    return mRegistrationPending;
 }
 
 void ActionImpl::activated()

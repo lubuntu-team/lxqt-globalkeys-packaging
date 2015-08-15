@@ -25,7 +25,7 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#include <QCoreApplication>
+#include <LXQt/Application>
 
 #include <QString>
 #include <QStringList>
@@ -230,15 +230,16 @@ int main(int argc, char *argv[])
         }
     }
 
-    int ignoreIt = chdir("/");
+    const char* home = getenv("HOME");
+    int ignoreIt = chdir((home && *home) ? home : "/");
     (void)ignoreIt;
 
-    if (configFiles.empty())
+    if (configFiles.empty() && home && *home)
     {
-        configFiles.push_back(QString::fromLocal8Bit(getenv("HOME")) + "/" DEFAULT_CONFIG);
+        configFiles.push_back(QString::fromLocal8Bit(home) + "/" DEFAULT_CONFIG);
     }
 
-    QCoreApplication app(argc, argv);
+    LxQt::Application app(argc, argv);
 
     Core core(runAsDaemon || useSyslog, minLogLevelSet, minLogLevel, configFiles, multipleActionsBehaviourSet, multipleActionsBehaviour);
 
