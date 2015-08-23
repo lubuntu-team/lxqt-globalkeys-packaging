@@ -24,8 +24,6 @@ Vcs-Browser: http://anonscm.debian.org/cgit/pkg-lxqt/lxqt-globalkeys.git
 
 Package: lxqt-globalkeys
 Architecture: any
-Breaks: lxqt-globalkeys-qt5 (<< 0.9.0)
-Replaces: lxqt-globalkeys-qt5 (<< 0.9.0)
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
@@ -37,8 +35,6 @@ Description: daemon used to register global keyboard shortcuts (appl.)
 Package: liblxqt-globalkeys0
 Architecture: any
 Section: libs
-Breaks: liblxqt-globalkeys-qt5-0 (<< 0.9.0)
-Replaces: liblxqt-globalkeys-qt5-0 (<< 0.9.0)
 Depends:
  ${misc:Pre-Depends},
  ${misc:Depends},
@@ -51,8 +47,6 @@ Description: daemon used to register global keyboard shortcuts (shared libs)
 Package: liblxqt-globalkeys0-dev
 Architecture: any
 Section: libdevel
-Breaks: liblxqt-globalkeys-qt5-0-dev (<< 0.9.0)
-Replaces: liblxqt-globalkeys-qt5-0-dev (<< 0.9.0)
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
@@ -65,8 +59,6 @@ Description: daemon used to register global keyboard shortcuts (dev files)
 Package: liblxqt-globalkeys-ui0
 Architecture: any
 Section: libs
-Breaks: liblxqt-globalkeys-ui-qt5-0 (<< 0.9.0)
-Replaces: liblxqt-globalkeys-ui-qt5-0 (<< 0.9.0)
 Depends:
  ${misc:Pre-Depends},
  ${misc:Depends},
@@ -80,8 +72,6 @@ Description: daemon used to register global keyboard shortcuts (ui files)
 Package: liblxqt-globalkeys-ui0-dev
 Architecture: any
 Section: libdevel
-Breaks: liblxqt-globalkeys-ui-qt5-0-dev (<< 0.9.0)
-Replaces: liblxqt-globalkeys-ui-qt5-0-dev (<< 0.9.0)
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
