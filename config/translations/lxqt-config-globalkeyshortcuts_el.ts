@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="de_DE" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="el">
 <context>
     <name>CommandFinder</name>
     <message>
@@ -7,69 +9,69 @@
     </message>
     <message>
         <source>Find a command</source>
-        <translation>Finde einen Befehl</translation>
+        <translation>Εύρεση εντολής</translation>
     </message>
 </context>
 <context>
     <name>ShortcutConfigWindow</name>
     <message>
-        <source>LxQt Shortcut Editor</source>
-        <translation>LxQt Hotkey Editor</translation>
+        <source>LXQt Shortcut Editor</source>
+        <translation>Επεξεργασία συντομεύσεων LXQt</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation>Beschreibung</translation>
+        <translation>Περιγραφή</translation>
     </message>
     <message>
         <source>Shortcut</source>
-        <translation>Hotkey</translation>
+        <translation>Συντόμευση</translation>
     </message>
     <message>
         <source>Command</source>
-        <translation>Befehl</translation>
+        <translation>Εντολή</translation>
     </message>
     <message>
         <source>Add New</source>
-        <translation>Hinzufügen</translation>
+        <translation>Προσθήκη νέας</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Entfernen</translation>
+        <translation>Αφαίρεση</translation>
     </message>
     <message>
         <source>Add Group</source>
-        <translation>Gruppe hinzufügen</translation>
+        <translation>Προσθήκη ομάδας</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation>Verwerfen</translation>
+        <translation>Επαναφορά</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Schließen</translation>
+        <translation>Κλείσιμο</translation>
     </message>
 </context>
 <context>
     <name>ShortcutEditor</name>
     <message>
         <source>None</source>
-        <translation>Kein</translation>
+        <translation>Κανένα</translation>
     </message>
     <message>
         <source>Add Shortcut</source>
-        <translation>Hotkey hinzufügen</translation>
+        <translation>Προσθήκη συντόμευσης</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Entfernen</translation>
+        <translation>Αφαίρεση</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Neue Gruppe</translation>
+        <translation>Νέα ομάδα</translation>
     </message>
     <message>
         <source>Reset Changes</source>
-        <translation>Änderungen verwerfen</translation>
+        <translation>Επαναφορά αλλαγών</translation>
     </message>
 </context>
 </TS>
