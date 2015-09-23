@@ -1,13 +1,15 @@
-lxqt-globalkeys (0.9.0+20150829-1) unstable; urgency=medium
+lxqt-globalkeys (0.9.0+20150914-1) experimental; urgency=medium
 
-  * Cherry-picked upstream version 0.9.0+20150829
+  * Cherry-picked upstream version 0.9.0+20150914
   * Fixed .gitignore
   * Removed breaks/replaces 
-  * cme fix dpkg-control
+  * Beautified debian/control
   * Added linker flags -Wl,--as-needed
   * upstream signing key added and used in watchfile
+  * Switched to experimental because of LXQt namespace change
+  * Added minimum version for liblxqt0-dev (>= 0.9.0+20150911)
 
- -- Alf Gaida <agaida@siduction.org>  Wed, 02 Sep 2015 21:28:59 +0200
+ -- Alf Gaida <agaida@siduction.org>  Thu, 24 Sep 2015 01:31:55 +0200
 
 lxqt-globalkeys (0.9.0+20150806-1) unstable; urgency=low
 
