@@ -2,7 +2,7 @@ lxqt-globalkeys (0.9.0+20150914-1) experimental; urgency=medium
 
   * Cherry-picked upstream version 0.9.0+20150914
   * Fixed .gitignore
-  * Removed breaks/replaces 
+  * Removed breaks/replaces
   * Beautified debian/control
   * Added linker flags -Wl,--as-needed
   * upstream signing key added and used in watchfile
