@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja">
+<TS version="2.1" language="el">
+<context>
+    <name>CommandFinder</name>
+    <message>
+        <source>...</source>
+        <translation type="vanished">...</translation>
+    </message>
+    <message>
+        <source>Find a command</source>
+        <translation type="vanished">Εύρεση εντολής</translation>
+    </message>
+</context>
 <context>
     <name>DefaultModel</name>
     <message>
         <location filename="../default_model.cpp" line="49"/>
         <source>Command</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Εντολή</translation>
     </message>
     <message>
         <location filename="../default_model.cpp" line="50"/>
@@ -26,12 +37,12 @@
     <message>
         <location filename="../default_model.cpp" line="144"/>
         <source>Shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Συντόμευση</translation>
     </message>
     <message>
         <location filename="../default_model.cpp" line="147"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Περιγραφή</translation>
     </message>
     <message>
         <location filename="../default_model.cpp" line="150"/>
@@ -122,7 +133,7 @@
     <message>
         <location filename="../main_window.ui" line="62"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αφαίρεση</translation>
     </message>
     <message>
         <location filename="../main_window.ui" line="72"/>
@@ -152,7 +163,7 @@
     <message>
         <location filename="../main_window.ui" line="133"/>
         <source>None</source>
-        <translation type="unfinished">なし</translation>
+        <translation type="unfinished">Κανένα</translation>
     </message>
     <message>
         <location filename="../main_window.ui" line="138"/>
@@ -162,21 +173,69 @@
     <message>
         <location filename="../main_window.ui" line="176"/>
         <source>Close</source>
-        <translation type="unfinished">閉じる</translation>
+        <translation type="unfinished">Κλείσιμο</translation>
     </message>
 </context>
 <context>
     <name>ShortcutConfigWindow</name>
     <message>
+        <source>LXQt Shortcut Editor</source>
+        <translation type="vanished">Επεξεργασία συντομεύσεων LXQt</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="vanished">Περιγραφή</translation>
+    </message>
+    <message>
+        <source>Shortcut</source>
+        <translation type="vanished">Συντόμευση</translation>
+    </message>
+    <message>
+        <source>Command</source>
+        <translation type="vanished">Εντολή</translation>
+    </message>
+    <message>
+        <source>Add New</source>
+        <translation type="vanished">Προσθήκη νέας</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="vanished">Αφαίρεση</translation>
+    </message>
+    <message>
+        <source>Add Group</source>
+        <translation type="vanished">Προσθήκη ομάδας</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation type="vanished">Επαναφορά</translation>
+    </message>
+    <message>
         <source>Close</source>
-        <translation type="vanished">閉じる</translation>
+        <translation type="vanished">Κλείσιμο</translation>
     </message>
 </context>
 <context>
     <name>ShortcutEditor</name>
     <message>
         <source>None</source>
-        <translation type="vanished">なし</translation>
+        <translation type="vanished">Κανένα</translation>
+    </message>
+    <message>
+        <source>Add Shortcut</source>
+        <translation type="vanished">Προσθήκη συντόμευσης</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="vanished">Αφαίρεση</translation>
+    </message>
+    <message>
+        <source>New Group</source>
+        <translation type="vanished">Νέα ομάδα</translation>
+    </message>
+    <message>
+        <source>Reset Changes</source>
+        <translation type="vanished">Επαναφορά αλλαγών</translation>
     </message>
 </context>
 </TS>
