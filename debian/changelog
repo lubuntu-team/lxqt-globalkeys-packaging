@@ -1,3 +1,9 @@
+lxqt-globalkeys (0.10.0-4) unstable; urgency=medium
+
+  * cast some error_t's to make hurd happy 
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 27 Dec 2015 23:26:32 +0100
+
 lxqt-globalkeys (0.10.0-3) unstable; urgency=medium
 
   * some cleanup in debian/rules
