@@ -11,11 +11,11 @@ Last-Update: 2015-12-27
  error_t createPipe(int fd[2])
  {
 -    error_t result = 0;
-+    error_t result = (error_t) 0;
++    error_t result = static_cast<error_t>(0);
      if (pipe(fd) < 0)
      {
 -        result = errno;
-+        result = (error_t) errno;
++        result = static_cast<error_t>( errno);
      }
      if (!result)
      {
@@ -24,18 +24,18 @@ Last-Update: 2015-12-27
          if (bytes_read < 0)
          {
 -            return errno;
-+            return (error_t) errno;
++            return static_cast<error_t>( errno);
          }
          if (!bytes_read)
          {
 -            return -1;
-+            return (error_t) -1;
++            return static_cast<error_t>( -1);
          }
          data = reinterpret_cast<char *>(data) + bytes_read;
          length -= bytes_read;
      }
 -    return 0;
-+    return (error_t) 0;
++    return static_cast<error_t>(0);
  }
  
  error_t writeAll(int fd, const void *data, size_t length)
@@ -44,18 +44,18 @@ Last-Update: 2015-12-27
          if (bytes_written < 0)
          {
 -            return errno;
-+            return (error_t) errno;
++            return static_cast<error_t>( errno);
          }
          if (!bytes_written)
          {
 -            return -1;
-+            return (error_t) -1;
++            return static_cast<error_t>( -1);
          }
          data = reinterpret_cast<const char *>(data) + bytes_written;
          length -= bytes_written;
      }
 -    return 0;
-+    return (error_t) 0;
++    return static_cast<error_t>( 0);
  }
  
  void closeBothPipeEnds(int fd[2])

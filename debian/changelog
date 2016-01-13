@@ -1,3 +1,9 @@
+lxqt-globalkeys (0.10.0-5) unstable; urgency=medium
+
+  * use static_cast for errno
+
+ -- Alf Gaida <agaida@siduction.org>  Wed, 13 Jan 2016 21:30:24 +0100
+
 lxqt-globalkeys (0.10.0-4) unstable; urgency=medium
 
   * cast some error_t's to make hurd happy 
