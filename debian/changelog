@@ -1,5 +1,6 @@
-lxqt-globalkeys (0.10.0-6) experimental; urgency=medium
+lxqt-globalkeys (0.10.96~20-g984e0e9-1) experimental; urgency=medium
 
+  * Cherry-picking upstream version 0.10.96~20-g984e0e9.
   * Preparing the upcoming release, switch to experimental
   * Added build dependency libqt5xdgiconloader-dev, set
     minimum versions
@@ -15,8 +16,9 @@ lxqt-globalkeys (0.10.0-6) experimental; urgency=medium
   * Added hardening options to rules
   * Fixed .gitignore
   * Removed Patches, applied upstream
+  * Fixed *-dev.install
 
- -- Alf Gaida <agaida@siduction.org>  Sun, 17 Jul 2016 14:55:55 +0200
+ -- Alf Gaida <agaida@siduction.org>  Sun, 17 Jul 2016 15:19:06 +0200
 
 lxqt-globalkeys (0.10.0-5) unstable; urgency=medium
 
