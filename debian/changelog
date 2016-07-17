@@ -1,3 +1,23 @@
+lxqt-globalkeys (0.10.0-6) experimental; urgency=medium
+
+  * Preparing the upcoming release, switch to experimental
+  * Added build dependency libqt5xdgiconloader-dev, set
+    minimum versions
+  * Bumped Standards to 3.9.8, no changes needed
+  * Fixed VCS-Fields, use https and plain /git/
+  * Added Recommends lxqt-globalkeys-l10n
+  * Fixed copyright Format field
+  * Bumped copyright years
+  * Don't install translations
+  * Added translation control to rules
+  * Set CMAKE_BUILD_TYPE=RelWithDebInfo
+  * Exported LC_ALL=C.UTF-8, make builds reproducible
+  * Added hardening options to rules
+  * Fixed .gitignore
+  * Removed Patches, applied upstream
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 17 Jul 2016 14:55:55 +0200
+
 lxqt-globalkeys (0.10.0-5) unstable; urgency=medium
 
   * use static_cast for errno
