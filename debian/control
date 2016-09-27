@@ -34,6 +34,7 @@ Description: daemon used to register global keyboard shortcuts (appl.)
 
 Package: liblxqt-globalkeys0
 Architecture: any
+Multi-Arch: same
 Section: libs
 Depends: ${misc:Pre-Depends},
          ${misc:Depends},
@@ -56,6 +57,7 @@ Description: daemon used to register global keyboard shortcuts (dev files)
 
 Package: liblxqt-globalkeys-ui0
 Architecture: any
+Multi-Arch: same
 Section: libs
 Depends: ${misc:Pre-Depends},
          ${misc:Depends},
