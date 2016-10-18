@@ -1,3 +1,33 @@
+lxqt-globalkeys (0.11.0-3) unstable; urgency=medium
+
+  * Cherry-picking upstream release 0.11.0.
+  * Sync debian foo with experimental
+  * Bumped Standards to 3.9.8, no changes needed
+  * Bumped compat to 10
+  * Removed --parallel from rules, compat 10 standard
+  * Bumped minimum version debhelper (>= 10)
+  * Bumped minimum version libqtxdg-dev (>= 2.0.0)
+  * Bumped minimum version liblxqt-dev (>= 0.11.0)
+  * Added build dependency libqt5svg5-dev
+  * Added build dependency libqt5xdgiconloader-dev (>= 2.0.0),
+  * Added Recommends lxqt-globalkeys-l10n
+  * Followin the Multiarch hinter:
+    - Marked liblxqt-globalkeys-ui0 Multi-Arch: same
+    - Marked liblxqt-globalkeys0 Multi-Arch: same
+  * Fixed VCS-Fields, use https and plain /git/
+  * Fixed copyright Format field
+  * Bumped copyright years
+  * Don't install translations
+  * Added translation control to rules
+  * Set CMAKE_BUILD_TYPE=RelWithDebInfo
+  * Exported LC_ALL=C.UTF-8, make builds reproducible
+  * Added hardening options to rules
+  * Fixed .gitignore
+  * Removed Patches, applied upstream
+  * Fixed *-dev.install
+
+ -- Alf Gaida <agaida@siduction.org>  Tue, 18 Oct 2016 02:47:50 +0200
+
 lxqt-globalkeys (0.10.0-5) unstable; urgency=medium
 
   * use static_cast for errno
