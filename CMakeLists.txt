@@ -11,6 +11,7 @@ if(NOT CMAKE_BUILD_TYPE)
      set(CMAKE_BUILD_TYPE Release)
 endif()
 
+set(LXQTBT_MINIMUM_VERSION "0.1.0")
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
@@ -20,11 +21,13 @@ set(CMAKE_AUTOUIC ON)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5DBus REQUIRED)
 find_package(Qt5LinguistTools REQUIRED QUIET)
+find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
 find_package(lxqt REQUIRED QUIET)
 
 
 include(LXQtTranslate)
 include(LXQtCreatePkgConfigFile)
+include(LXQtCreatePortableHeaders)
 include(LXQtCompilerSettings NO_POLICY_SCOPE)
 
 include(GNUInstallDirs) # Standard directories for installation
@@ -90,13 +93,3 @@ install(FILES
     "${CMAKE_BINARY_DIR}/${LXQT_GLOBALKEYS_UI_CMAKE_NAME}-config-version.cmake"
     DESTINATION "${LXQT_INSTALL_CMAKE_DIR}/${LXQT_GLOBALKEYS_UI_CMAKE_NAME}"
 )
-
-# building tarball with CPack -------------------------------------------------
-include(InstallRequiredSystemLibraries)
-set(CPACK_PACKAGE_VERSION_MAJOR ${LXQT_MAJOR_VERSION})
-set(CPACK_PACKAGE_VERSION_MINOR ${LXQT_MINOR_VERSION})
-set(CPACK_PACKAGE_VERSION_PATCH ${LXQT_PATCH_VERSION})
-set(CPACK_GENERATOR TBZ2)
-set(CPACK_SOURCE_GENERATOR TBZ2)
-set(CPACK_SOURCE_IGNORE_FILES /build/;.gitignore;.*~;.git;.kdev4;temp)
-include(CPack)
