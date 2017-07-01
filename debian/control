@@ -11,7 +11,7 @@ Build-Depends: debhelper (>= 10),
                libqt5svg5-dev,
                libqt5x11extras5-dev,
                libx11-dev
-Standards-Version: 3.9.8
+Standards-Version: 4.0.0
 Vcs-Browser: https://anonscm.debian.org/cgit/pkg-lxqt/lxqt-globalkeys.git/?h=debian/sid
 Vcs-Git: https://anonscm.debian.org/git/pkg-lxqt/lxqt-globalkeys.git -b debian/sid
 Homepage: https://github.com/lxde/lxqt-globalkeys
@@ -20,7 +20,10 @@ Package: lxqt-globalkeys
 Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends}
-Recommends: lxqt-globalkeys-l10n
+Recommends: lxqt-globalkeys-l10n,
+            lxqt-qtplugin,
+            lxqt-session
+Suggests: lxqt | lxqt-core
 Description: daemon used to register global keyboard shortcuts (appl.)
  Daemon used to register global keyboard shortcuts.
  .

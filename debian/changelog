@@ -1,3 +1,12 @@
+lxqt-globalkeys (0.11.1-2) unstable; urgency=medium
+
+  * Bump Standards to 4.0.0 - no changes needed
+  * Recommend lxqt-qtplugin (Closes: #866235)
+  * Recommend lxqt-session - globalkeys make only sense with the session
+  * Suggest lxqt | lxqt-core
+
+ -- Alf Gaida <agaida@siduction.org>  Sat, 01 Jul 2017 21:47:02 +0200
+
 lxqt-globalkeys (0.11.1-1) unstable; urgency=medium
 
   * Cherry-picking upstream release 0.11.1.
