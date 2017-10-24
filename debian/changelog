@@ -1,3 +1,15 @@
+lxqt-globalkeys (0.12.0-1) experimental; urgency=medium
+
+  * Cherry-picking upstream release 0.12.0.
+  * Switched to experimental
+  * Bumped liblxqt0-dev to >= 0.12.0
+  * Bumped Standards to 4.1.1 +Vcs-Browser: 
+  * Added Breaks/Replaces for lxqt-common << 0.12.0
+  * Added override_dh_missing
+  * Added autostart things to install
+
+ -- Alf Gaida <agaida@siduction.org>  Tue, 24 Oct 2017 17:24:29 +0200
+
 lxqt-globalkeys (0.11.1-2) unstable; urgency=medium
 
   * Bump Standards to 4.0.0 - no changes needed

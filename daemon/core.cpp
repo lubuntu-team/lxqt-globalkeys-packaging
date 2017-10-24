@@ -42,6 +42,7 @@
 #include <errno.h>
 #include <string.h>
 #include <stdio.h>
+#include <mutex>
 
 #include <stdexcept>
 
@@ -760,8 +761,8 @@ void Core::saveConfig()
     settings.setValue(/* General/ */"AllowGrabBaseKeypad",  mAllowGrabBaseKeypad);
     settings.setValue(/* General/ */"AllowGrabMiscKeypad",  mAllowGrabMiscKeypad);
 
-    ShortcutAndActionById::const_iterator lastShortcutAndActionById = mShortcutAndActionById.end();
-    for (ShortcutAndActionById::const_iterator shortcutAndActionById = mShortcutAndActionById.begin(); shortcutAndActionById != lastShortcutAndActionById; ++shortcutAndActionById)
+    ShortcutAndActionById::const_iterator lastShortcutAndActionById = mShortcutAndActionById.constEnd();
+    for (ShortcutAndActionById::const_iterator shortcutAndActionById = mShortcutAndActionById.constBegin(); shortcutAndActionById != lastShortcutAndActionById; ++shortcutAndActionById)
     {
         const BaseAction *action = shortcutAndActionById.value().second;
         QString section = shortcutAndActionById.value().first + "." + QString::number(shortcutAndActionById.key());
@@ -1146,17 +1147,18 @@ void Core::run()
         XEvent event;
         while (mX11EventLoopActive)
         {
-            XNextEvent(mDisplay, &event);
+            XPeekEvent(mDisplay, &event);
             if (!mX11EventLoopActive)
             {
                 break;
             }
 
-            switch (event.type)
+            if (event.type == KeyPress && mDataMutex.tryLock(0))
             {
-            case KeyPress:
-            {
-                QMutexLocker lock(&mDataMutex);
+                std::unique_lock<QMutex> unlocker(mDataMutex, std::adopt_lock);
+
+                // pop event from the x11 queue and process it
+                XNextEvent(mDisplay, &event);
 
                 if (mGrabbingShortcut)
                 {
@@ -1370,11 +1372,15 @@ void Core::run()
                         }
                     }
                 }
-            }
-            break;
 
-            default:
+            }
+            else
+            // check for pending pipe requests from other thread
             {
+                if (event.type != KeyPress) {
+                    XNextEvent(mDisplay, &event);
+                }
+
                 pollfd fds[1];
                 fds[0].fd = mX11RequestPipe[STDIN_FILENO];
                 fds[0].events = POLLIN | POLLERR | POLLHUP;
@@ -1643,7 +1649,6 @@ void Core::run()
                         }
                     }
                 }
-            }
             }
         }
     }
@@ -2033,8 +2038,8 @@ QString Core::checkShortcut(const QString &shortcut, X11Shortcut &X11shortcut)
 
     try
     {
-        ShortcutByX11::const_iterator shortcutByX11 = mShortcutByX11.find(X11shortcut);
-        if (shortcutByX11 != mShortcutByX11.end())
+        ShortcutByX11::const_iterator shortcutByX11 = mShortcutByX11.constFind(X11shortcut);
+        if (shortcutByX11 != mShortcutByX11.constEnd())
         {
             usedShortcut = shortcutByX11.value();
         }
@@ -2055,8 +2060,8 @@ QString Core::checkShortcut(const QString &shortcut, X11Shortcut &X11shortcut)
         log(LOG_INFO, "Using shortcut '%s' instead of '%s'", qPrintable(usedShortcut), qPrintable(shortcut));
     }
 
-    X11ByShortcut::const_iterator x11ByShortcut = mX11ByShortcut.find(usedShortcut);
-    if (x11ByShortcut == mX11ByShortcut.end())
+    X11ByShortcut::const_iterator x11ByShortcut = mX11ByShortcut.constFind(usedShortcut);
+    if (x11ByShortcut == mX11ByShortcut.constEnd())
     {
         mX11ByShortcut[usedShortcut] = X11shortcut;
     }
@@ -2129,7 +2134,7 @@ void Core::addClientAction(QPair<QString, qulonglong> &result, const QString &sh
     QString useShortcut = shortcut;
     if (shortcut.isEmpty())
     {
-        IdByClientPath::ConstIterator idByClientPath = mIdByClientPath.find(path);
+        IdByClientPath::ConstIterator idByClientPath = mIdByClientPath.constFind(path);
         if (idByClientPath != mIdByClientPath.constEnd())
         {
             useShortcut = mShortcutAndActionById[idByClientPath.value()].first;;

@@ -11,7 +11,7 @@ if(NOT CMAKE_BUILD_TYPE)
      set(CMAKE_BUILD_TYPE Release)
 endif()
 
-set(LXQTBT_MINIMUM_VERSION "0.1.0")
+set(LXQTBT_MINIMUM_VERSION "0.4.0")
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
@@ -20,10 +20,16 @@ set(CMAKE_AUTOUIC ON)
 
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5DBus REQUIRED)
-find_package(Qt5LinguistTools REQUIRED QUIET)
+find_package(Qt5LinguistTools REQUIRED)
 find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
-find_package(lxqt REQUIRED QUIET)
+find_package(lxqt REQUIRED)
 
+
+# Patch Version
+set(LXQT_GLOBALKEYS_PATCH_VERSION 0)
+
+set(LXQT_GLOBALKEYS_VERSION ${LXQT_MAJOR_VERSION}.${LXQT_MINOR_VERSION}.${LXQT_GLOBALKEYS_PATCH_VERSION})
+add_definitions("-DLXQT_GLOBALKEYS_VERSION=\"${LXQT_GLOBALKEYS_VERSION}\"")
 
 include(LXQtTranslate)
 include(LXQtCreatePkgConfigFile)
@@ -93,3 +99,8 @@ install(FILES
     "${CMAKE_BINARY_DIR}/${LXQT_GLOBALKEYS_UI_CMAKE_NAME}-config-version.cmake"
     DESTINATION "${LXQT_INSTALL_CMAKE_DIR}/${LXQT_GLOBALKEYS_UI_CMAKE_NAME}"
 )
+
+# merged from lxqt-common
+add_subdirectory(autostart)
+add_subdirectory(xdg)
+
