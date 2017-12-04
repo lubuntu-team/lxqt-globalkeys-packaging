@@ -12,8 +12,8 @@ Build-Depends: debhelper (>= 10),
                libqt5x11extras5-dev,
                libx11-dev
 Standards-Version: 4.1.1
-Vcs-Browser: https://anonscm.debian.org/cgit/pkg-lxqt/lxqt-globalkeys.git/?h=debian/experimental
-Vcs-Git: https://anonscm.debian.org/git/pkg-lxqt/lxqt-globalkeys.git -b debian/experimental
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-lxqt/lxqt-globalkeys.git/?h=debian/sid
+Vcs-Git: https://anonscm.debian.org/git/pkg-lxqt/lxqt-globalkeys.git -b debian/sid
 Homepage: https://github.com/lxde/lxqt-globalkeys
 
 Package: lxqt-globalkeys
