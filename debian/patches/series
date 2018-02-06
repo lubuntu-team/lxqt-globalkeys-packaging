@@ -1,2 +1,3 @@
 # Ubuntu-specific patches
 fix-wrong-radio-buttons.patch
+avoid-polluting-x11-shortcut-map.patch

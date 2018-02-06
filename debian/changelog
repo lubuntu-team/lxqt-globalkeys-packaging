@@ -5,6 +5,9 @@ lxqt-globalkeys (0.12.0-3ubuntu1) UNRELEASED; urgency=medium
     - Fix wrong radio buttons when changing shortcuts.
       + fix-wrong-radio-buttons.patch
       + Upstream commit a9ec3c0.
+    - Avoid polluting the the x11 shortcut map.
+      + avoid-polluting-x11-shortcut-map.patch
+      + Upstream commit c79d560.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Mon, 05 Feb 2018 20:38:35 -0600
 
