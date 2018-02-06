@@ -10,7 +10,14 @@ lxqt-globalkeys (0.12.0-3ubuntu1) UNRELEASED; urgency=medium
       + Upstream commit c79d560.
     - Add super key binding support.
       + add-super-key-binding-support.patch
-      + Upstream commit fc35a3b.
+      + Free the storage returned by XGetKeyboardMapping.
+        * Upstream commit 1d4ae0c.
+      + Daemon triggers on KeyRelease.
+        * Upstream commit e8a2a75.
+      + Register meta keys for shortcuts.
+        * Upstream commit f2451b2.
+      + Triggering shortcuts with meta keys.
+        * Upstream commit fc35a3b.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Mon, 05 Feb 2018 20:38:35 -0600
 

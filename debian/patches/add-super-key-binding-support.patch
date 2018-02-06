@@ -1,6 +1,10 @@
-Description: Triggering shortcuts with meta keys
- The left and right meta keys can trigger shortcuts
- at the KeyRelease event.
+Description: Add super key binding support.
+ This commit contains three patches that was done in one upstream pull request
+ but the commits weren't squashed. The commit descriptions are as follows:
+ - Free the storage returned by XGetKeyboardMapping.
+ - Daemon triggers on KeyRelease.
+ - Register meta keys for shortcuts.
+ - Triggering shortcuts with meta keys.
 Author: ska67 <git17@ska67.de>
 Origin: backport
 Bug: https://github.com/lxde/lxqt/issues/1259
@@ -8,7 +12,16 @@ Applied-Upstream: commit
 Last-Update: 2018-02-05
 --- a/daemon/core.cpp
 +++ b/daemon/core.cpp
-@@ -1140,6 +1140,8 @@ void Core::run()
+@@ -1120,7 +1120,7 @@ void Core::run()
+ 
+     Window rootWindow = DefaultRootWindow(mDisplay);
+ 
+-    XSelectInput(mDisplay, rootWindow, KeyPressMask);
++    XSelectInput(mDisplay, rootWindow, KeyPressMask | KeyReleaseMask);
+ 
+     mInterClientCommunicationWindow = XCreateSimpleWindow(mDisplay, rootWindow, 0, 0, 1, 1, 0, 0, 0);
+ 
+@@ -1140,10 +1140,14 @@ void Core::run()
          allModifiers.insert(ignoreLocks);
      }
  
@@ -17,7 +30,73 @@ Last-Update: 2018-02-05
  
      char signal = 0;
      if (write(mX11ResponsePipe[STDOUT_FILENO], &signal, sizeof(signal)) == sizeof(signal))
-@@ -1316,65 +1318,84 @@ void Core::run()
+     {
++        bool keyReleaseExpected = false;
++
+         XEvent event;
+         while (mX11EventLoopActive)
+         {
+@@ -1153,7 +1157,15 @@ void Core::run()
+                 break;
+             }
+ 
+-            if (event.type == KeyPress && mDataMutex.tryLock(0))
++            if ((event.type == KeyRelease) && !keyReleaseExpected)
++            {
++                // pop event from the x11 queue and do nothing
++                XNextEvent(mDisplay, &event);
++                continue;
++            }
++            keyReleaseExpected = false; // Close time window for accepting meta keys.
++
++            if (((event.type == KeyPress) || (event.type == KeyRelease)) && mDataMutex.tryLock(0))
+             {
+                 std::unique_lock<QMutex> unlocker(mDataMutex, std::adopt_lock);
+ 
+@@ -1201,7 +1213,29 @@ void Core::run()
+                                 }
+                                 else
+                                 {
+-                                    if (isModifier(keySym) || !isAllowed(keySym, event.xkey.state & allShifts))
++                                    if (isModifier(keySym))
++                                    {
++                                        if (event.type == KeyPress)
++                                        {
++                                            ignoreKey = true;
++                                            keyReleaseExpected = true;
++                                        }
++                                        else
++                                        {
++                                            // Only the meta keys are allowed.
++
++                                            if ((event.xkey.state & allShifts) == MetaMask)
++                                            {
++                                                shortcut = XKeysymToString(keySym);
++                                                event.xkey.state &= ~allShifts; // Modifier keys must not use shift states.
++                                            }
++                                            else
++                                            {
++                                                ignoreKey = true;
++                                            }
++                                        }
++                                    }
++                                    else if ((event.type == KeyRelease) || !isAllowed(keySym, event.xkey.state & allShifts))
+                                     {
+                                         ignoreKey = true;
+                                     }
+@@ -1243,6 +1277,11 @@ void Core::run()
+                             }
+                         }
+                     }
++                    if (keySyms)
++                    {
++                        XFree(keySyms);
++                        keySyms = nullptr;
++                    }
+                     if (!ignoreKey)
+                     {
+                         IdsByShortcut::iterator idsByShortcut = mIdsByShortcut.find(shortcut);
+@@ -1316,65 +1355,84 @@ void Core::run()
                  }
                  else
                  {
@@ -143,3 +222,20 @@ Last-Update: 2018-02-05
                      }
                  }
  
+@@ -1382,7 +1440,7 @@ void Core::run()
+             else
+             // check for pending pipe requests from other thread
+             {
+-                if (event.type != KeyPress) {
++                if ((event.type != KeyPress) && (event.type != KeyRelease)) {
+                     XNextEvent(mDisplay, &event);
+                 }
+ 
+@@ -2631,6 +2689,7 @@ void Core::changeClientActionShortcut(QP
+                 result = qMakePair(QString(), id);
+                 return;
+             }
++            keyReleaseExpected = false; // Close time window for accepting meta keys.
+ 
+             IdsByShortcut::iterator idsByShortcut = mIdsByShortcut.find(oldShortcut);
+             if (idsByShortcut != mIdsByShortcut.end())
