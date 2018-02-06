@@ -1,3 +1,13 @@
+lxqt-globalkeys (0.12.0-3ubuntu1) UNRELEASED; urgency=medium
+
+  * Cherry-pick some upstream commits because the upstream release cycle is
+    too slow:
+    - Fix wrong radio buttons when changing shortcuts.
+      + fix-wrong-radio-buttons.patch
+      + Upstream commit a9ec3c0.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Mon, 05 Feb 2018 20:38:35 -0600
+
 lxqt-globalkeys (0.12.0-3) unstable; urgency=medium
 
   * Bumped Standards to 4.1.2, no changes needed
