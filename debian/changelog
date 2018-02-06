@@ -8,16 +8,6 @@ lxqt-globalkeys (0.12.0-3ubuntu1) UNRELEASED; urgency=medium
     - Avoid polluting the the x11 shortcut map.
       + avoid-polluting-x11-shortcut-map.patch
       + Upstream commit c79d560.
-    - Add super key binding support.
-      + add-super-key-binding-support.patch
-      + Free the storage returned by XGetKeyboardMapping.
-        * Upstream commit 1d4ae0c.
-      + Daemon triggers on KeyRelease.
-        * Upstream commit e8a2a75.
-      + Register meta keys for shortcuts.
-        * Upstream commit f2451b2.
-      + Triggering shortcuts with meta keys.
-        * Upstream commit fc35a3b.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Mon, 05 Feb 2018 20:38:35 -0600
 
