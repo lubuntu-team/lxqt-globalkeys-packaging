@@ -1,4 +1,4 @@
-lxqt-globalkeys (0.12.0-3ubuntu1) UNRELEASED; urgency=medium
+lxqt-globalkeys (0.12.0-3ubuntu1) bionic; urgency=medium
 
   * Cherry-pick some upstream commits because the upstream release cycle is
     too slow:
@@ -9,7 +9,7 @@ lxqt-globalkeys (0.12.0-3ubuntu1) UNRELEASED; urgency=medium
       + avoid-polluting-x11-shortcut-map.patch
       + Upstream commit c79d560.
 
- -- Simon Quigley <tsimonq2@ubuntu.com>  Mon, 05 Feb 2018 20:38:35 -0600
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Mon, 05 Feb 2018 21:19:18 -0600
 
 lxqt-globalkeys (0.12.0-3) unstable; urgency=medium
 
