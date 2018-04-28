@@ -1,3 +1,14 @@
+lxqt-globalkeys (0.12.0-4) unstable; urgency=medium
+
+  * Bumped compat to 11
+  * Bumped debhelper to >= 11~
+  * Bumped Standards to 4.1.4, no changes needed
+  * Changed VCS fields for salsa
+  * Changed Homepage, Source and watch to lxqt
+  * Bumped years in copyright
+
+ -- Alf Gaida <agaida@siduction.org>  Sat, 28 Apr 2018 13:53:23 +0200
+
 lxqt-globalkeys (0.12.0-3) unstable; urgency=medium
 
   * Bumped Standards to 4.1.2, no changes needed
@@ -17,7 +28,7 @@ lxqt-globalkeys (0.12.0-1) experimental; urgency=medium
   * Cherry-picking upstream release 0.12.0.
   * Switched to experimental
   * Bumped liblxqt0-dev to >= 0.12.0
-  * Bumped Standards to 4.1.1 +Vcs-Browser: 
+  * Bumped Standards to 4.1.1 +Vcs-Browser:
   * Added Breaks/Replaces for lxqt-common << 0.12.0
   * Added override_dh_missing
   * Added autostart things to install
@@ -86,7 +97,7 @@ lxqt-globalkeys (0.10.0-5) unstable; urgency=medium
 
 lxqt-globalkeys (0.10.0-4) unstable; urgency=medium
 
-  * cast some error_t's to make hurd happy 
+  * cast some error_t's to make hurd happy
 
  -- Alf Gaida <agaida@siduction.org>  Sun, 27 Dec 2015 23:26:32 +0100
 

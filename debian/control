@@ -5,16 +5,16 @@ Uploaders: Alf Gaida <agaida@siduction.org>,
            Andrew Lee (李健秋) <ajqlee@debian.org>
 Section: x11
 Priority: optional
-Build-Depends: debhelper (>= 10),
+Build-Depends: debhelper (>= 11~),
                libkf5windowsystem-dev,
                liblxqt0-dev (>= 0.12.0),
                libqt5svg5-dev,
                libqt5x11extras5-dev,
                libx11-dev
-Standards-Version: 4.1.2
-Vcs-Browser: https://anonscm.debian.org/cgit/pkg-lxqt/lxqt-globalkeys.git
-Vcs-Git: https://anonscm.debian.org/git/pkg-lxqt/lxqt-globalkeys.git
-Homepage: https://github.com/lxde/lxqt-globalkeys
+Standards-Version: 4.1.4
+Vcs-Browser: https://salsa.debian.org/lxqt-team/lxqt-globalkeys
+Vcs-Git: https://salsa.debian.org/lxqt-team/lxqt-globalkeys.git
+Homepage: https://github.com/lxqt/lxqt-globalkeys
 
 Package: lxqt-globalkeys
 Architecture: any
