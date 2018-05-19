@@ -13,8 +13,10 @@ Build-Depends: debhelper (>= 11~),
                libqt5x11extras5-dev,
                libx11-dev
 Standards-Version: 4.1.4
-Vcs-Browser: https://salsa.debian.org/lxqt-team/lxqt-globalkeys
-Vcs-Git: https://salsa.debian.org/lxqt-team/lxqt-globalkeys.git
+Vcs-Browser: https://phab.lubuntu.me/source/lxqt-globalkeys/
+Vcs-Git: https://phab.lubuntu.me/source/lxqt-globalkeys.git
+XS-Debian-Vcs-Browser: https://salsa.debian.org/lxqt-team/lxqt-globalkeys
+XS-Debian-Vcs-Git: https://salsa.debian.org/lxqt-team/lxqt-globalkeys.git
 Homepage: https://github.com/lxqt/lxqt-globalkeys
 
 Package: lxqt-globalkeys

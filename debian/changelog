@@ -8,6 +8,7 @@ lxqt-globalkeys (0.12.0-4ubuntu1) UNRELEASED; urgency=medium
       + Avoid polluting the the x11 shortcut map.
         * avoid-polluting-x11-shortcut-map.patch
         * Upstream commit c79d560.
+  * Change the Vcs entries to be Lubuntu-specific.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 19 May 2018 17:15:54 -0500
 
