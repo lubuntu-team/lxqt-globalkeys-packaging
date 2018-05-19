@@ -1,3 +1,16 @@
+lxqt-globalkeys (0.12.0-4ubuntu1) UNRELEASED; urgency=medium
+
+  * Merge from Debian Sid. Remaining changes:
+    - Backport two upstream patches:
+      + Fix wrong radio buttons when changing shortcuts.
+        * fix-wrong-radio-buttons.patch
+        * Upstream commit a9ec3c0.
+      + Avoid polluting the the x11 shortcut map.
+        * avoid-polluting-x11-shortcut-map.patch
+        * Upstream commit c79d560.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 19 May 2018 17:15:54 -0500
+
 lxqt-globalkeys (0.12.0-4) unstable; urgency=medium
 
   * Bumped compat to 11
