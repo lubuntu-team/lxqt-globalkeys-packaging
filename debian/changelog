@@ -1,4 +1,4 @@
-lxqt-globalkeys (0.12.0-4ubuntu1) UNRELEASED; urgency=medium
+lxqt-globalkeys (0.12.0-4ubuntu1) cosmic; urgency=medium
 
   * Merge from Debian Sid. Remaining changes:
     - Backport two upstream patches:
@@ -10,7 +10,7 @@ lxqt-globalkeys (0.12.0-4ubuntu1) UNRELEASED; urgency=medium
         * Upstream commit c79d560.
   * Change the Vcs entries to be Lubuntu-specific.
 
- -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 19 May 2018 17:15:54 -0500
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 19 May 2018 17:37:34 -0500
 
 lxqt-globalkeys (0.12.0-4) unstable; urgency=medium
 
