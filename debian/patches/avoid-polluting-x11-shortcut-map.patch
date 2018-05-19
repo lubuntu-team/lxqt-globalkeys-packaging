@@ -1,4 +1,4 @@
-Description: Avoid polluting the the x11 shortcut map
+Description: Avoid polluting the x11 shortcut map
  When user presses a key, but this key was not previously registered as a
  shortcut, the shortcut map is polluted with "" entry.
  .
