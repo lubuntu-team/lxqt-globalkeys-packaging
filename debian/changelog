@@ -1,6 +1,6 @@
 lxqt-globalkeys (0.13.0-0ubuntu2) cosmic; urgency=medium
 
-  * Provide a more complete default configuration file. 
+  * Provide a more complete default configuration file.
 
  -- Walter Lapchynski <wxl@ubuntu.com>  Sat, 06 Oct 2018 23:26:56 -0700
 
