@@ -80,3 +80,14 @@ Description: daemon used to register global keyboard shortcuts (ui dev files)
  Daemon used to register global keyboard shortcuts.
  .
  This package contain the ui development files.
+
+Package: lxqt-globalkeys-l10n
+Architecture: all
+Multi-Arch: foreign
+Section: localization
+Depends: ${misc:Depends},
+         qttranslations5-l10n
+Breaks: lxqt-globalkeys (<< 0.11.0)
+Replaces: lxqt-globalkeys (<< 0.11.0)
+Description: Language package for lxqt-globalkeys
+ This package contains the l10n files needed by lxqt-globalkeys.
