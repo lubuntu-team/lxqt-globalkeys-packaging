@@ -1,1 +1,3 @@
 complete-config-file.patch
+move-config.patch
+use-xdg-hierarchy.patch

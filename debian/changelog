@@ -1,3 +1,10 @@
+lxqt-globalkeys (0.14.1-0ubuntu2) eoan; urgency=medium
+
+  * Add XDG support.
+  * Bump Standards-Version to 4.4.0, no changes needed.
+
+ -- Walter Lapchynski <wxl@ubuntu.com>  Tue, 20 Aug 2019 22:46:08 -0700
+
 lxqt-globalkeys (0.14.1-0ubuntu1) disco; urgency=medium
 
   * New upstream release.

@@ -1,0 +1,15 @@
+Description: move shortcuts config fom /etc/xdg/lxqt to /usr/share/lxqt
+Author: Alf Gaida <agaida@siduction.org>
+Applied-Upstream:
+https://github.com/lxqt/lxqt-globalkeys/commit/cbce84c6703caa0835765fca22542826d575ca1f.patch
+Last-Update: 2019-08-20
+--- a/xdg/CMakeLists.txt
++++ b/xdg/CMakeLists.txt
+@@ -1,6 +1,6 @@
+ # install default config files to /etc/xdg
+ install(FILES
+     globalkeyshortcuts.conf
+-    DESTINATION "${LXQT_ETC_XDG_DIR}/lxqt"
++    DESTINATION "${CMAKE_INSTALL_DATADIR}/lxqt"
+     COMPONENT Runtime
+ )
