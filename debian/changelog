@@ -1,3 +1,9 @@
+lxqt-globalkeys (0.14.1-0ubuntu3) eoan; urgency=medium
+
+  * Changed the location of upstream config.
+
+ -- Raman Sarda <theloudspeaker@lubuntu.me>  Wed, 04 Sep 2019 23:15:09 +0530
+
 lxqt-globalkeys (0.14.1-0ubuntu2) eoan; urgency=medium
 
   * Add XDG support.
