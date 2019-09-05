@@ -6,5 +6,5 @@ usr/bin/lxqt-config-globalkeyshortcuts
 usr/share/applications/lxqt-config-globalkeyshortcuts.desktop
 
 # configuration and autostart from lxqt-common
-usr/share/lxqt/globalkeyshortcuts.conf etc/xdg/xdg-Lubuntu/lxqt/globalkeyshortcuts.conf
+usr/share/lxqt/globalkeyshortcuts.conf etc/xdg/lxqt/globalkeyshortcuts.conf
 etc/xdg/autostart/lxqt-globalkeyshortcuts.desktop

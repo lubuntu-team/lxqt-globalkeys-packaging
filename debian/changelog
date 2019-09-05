@@ -1,3 +1,9 @@
+lxqt-globalkeys (0.14.1-0ubuntu4) eoan; urgency=medium
+
+  * Correctly changed the location of upstream config.
+
+ -- Raman Sarda <theloudspeaker@lubuntu.me>  Thu, 05 Sep 2019 22:35:29 +0000
+
 lxqt-globalkeys (0.14.1-0ubuntu3) eoan; urgency=medium
 
   * Changed the location of upstream config.
