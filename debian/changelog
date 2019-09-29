@@ -1,3 +1,9 @@
+lxqt-globalkeys (0.14.1-0ubuntu5) eoan; urgency=medium
+
+  * Drop patches move-config.patch and use-xdg-hierarchy.patch
+
+ -- apt-ghetto <apt-ghetto@lubuntu.me>  Sun, 29 Sep 2019 11:56:57 +0200
+
 lxqt-globalkeys (0.14.1-0ubuntu4) eoan; urgency=medium
 
   * Correctly changed the location of upstream config.
