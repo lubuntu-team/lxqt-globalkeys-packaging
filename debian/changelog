@@ -1,3 +1,9 @@
+lxqt-globalkeys (0.14.1+git20190923-0ubuntu1) eoan; urgency=medium
+
+  * Picked the latest git.
+
+ -- Raman Sarda <theloudspeaker@lubuntu.me>  Tue, 08 Oct 2019 03:27:38 +0530
+
 lxqt-globalkeys (0.14.1-0ubuntu4) eoan; urgency=medium
 
   * Correctly changed the location of upstream config.
