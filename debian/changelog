@@ -1,6 +1,8 @@
 lxqt-globalkeys (0.14.2-0ubuntu1) eoan; urgency=medium
 
   * New upstream release
+  * Update years in copyright file
+  * Bump standards-version
 
  -- apt-ghetto <apt-ghetto@lubuntu.me>  Sat, 12 Oct 2019 14:38:25 +0200
 

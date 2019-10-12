@@ -12,7 +12,7 @@ Build-Depends: debhelper (>= 12),
                libqt5svg5-dev,
                libqt5x11extras5-dev,
                libx11-dev
-Standards-Version: 4.4.0
+Standards-Version: 4.4.1.1
 Vcs-Browser: https://phab.lubuntu.me/source/lxqt-globalkeys/
 Vcs-Git: https://phab.lubuntu.me/source/lxqt-globalkeys.git
 XS-Debian-Vcs-Browser: https://salsa.debian.org/lxqt-team/lxqt-globalkeys
