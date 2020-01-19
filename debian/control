@@ -11,12 +11,11 @@ Build-Depends: debhelper (>= 12),
                liblxqt0-dev (>= 0.14.0),
                libqt5svg5-dev,
                libqt5x11extras5-dev,
-               libx11-dev
-Standards-Version: 4.4.0
-Vcs-Browser: https://phab.lubuntu.me/source/lxqt-globalkeys/
-Vcs-Git: https://phab.lubuntu.me/source/lxqt-globalkeys.git
-XS-Debian-Vcs-Browser: https://salsa.debian.org/lxqt-team/lxqt-globalkeys
-XS-Debian-Vcs-Git: https://salsa.debian.org/lxqt-team/lxqt-globalkeys.git
+               libx11-dev,
+               xserver-xorg-input-libinput-dev,
+Standards-Version: 4.4.1
+Vcs-Browser: https://salsa.debian.org/lxqt-team/lxqt-globalkeys
+Vcs-Git: https://salsa.debian.org/lxqt-team/lxqt-globalkeys.git
 Homepage: https://github.com/lxqt/lxqt-globalkeys
 
 Package: lxqt-globalkeys
