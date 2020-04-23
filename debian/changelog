@@ -1,16 +1,52 @@
-lxqt-globalkeys (0.14.2-0ubuntu1) eoan; urgency=medium
+lxqt-globalkeys (0.14.3-1ubuntu1) focal; urgency=low
 
-  * New upstream release
-  * Update years in copyright file
-  * Bump standards-version
+  * Merge from Debian unstable. Remaining changes:
+   - Modified lxqt-globalkeys.install to include ubuntu specific changes.
+     The changes install default config file to another location so that distribution specific config files provided via xdg take precedence.
+   - new dependencies in control file.
+   - Translations from debian for following:
+     1. config/translations/lxqt-config-globalkeyshortcuts_cs.ts
+     2. config/translations/lxqt-config-globalkeyshortcuts_da.ts
+     3. config/translations/lxqt-config-globalkeyshortcuts_de.ts
+     4. config/translations/lxqt-config-globalkeyshortcuts_el.ts
+     5. config/translations/lxqt-config-globalkeyshortcuts_gl.ts
+     6. config/translations/lxqt-config-globalkeyshortcuts_gl.ts
+     7. config/translations/lxqt-config-globalkeyshortcuts_ja.ts
+     8. config/translations/lxqt-config-globalkeyshortcuts_it.ts
+     9. config/translations/lxqt-config-globalkeyshortcuts_nb_NO.ts
+     10. config/translations/lxqt-config-globalkeyshortcuts_pt.ts
+     11. config/translations/lxqt-config-globalkeyshortcuts_pt_BR.ts
+   - Removed an unncessary patch.
 
- -- apt-ghetto <apt-ghetto@lubuntu.me>  Sat, 12 Oct 2019 14:38:25 +0200
+ -- Raman Sarda <theloudspeaker@lubuntu.me>  Tue, 07 Jan 2020 19:26:41 +0530
 
-lxqt-globalkeys (0.14.1-0ubuntu5) eoan; urgency=medium
+lxqt-globalkeys (0.14.3-1) unstable; urgency=medium
 
-  * Drop patches move-config.patch and use-xdg-hierarchy.patch
+  * New upstream version 0.14.3 (Closes: #883035)
 
- -- apt-ghetto <apt-ghetto@lubuntu.me>  Sun, 29 Sep 2019 11:56:57 +0200
+ -- Alf Gaida <agaida@siduction.org>  Wed, 16 Oct 2019 23:33:20 +0200
+
+lxqt-globalkeys (0.14.2-1) unstable; urgency=medium
+
+  * Imported new upstream release 0.14.2.
+  * Switched to gbp
+  * Bumped Standards-Version to 4.4.1, no changes needed
+  * Fixed installation path for globalkeyshortcuts.conf to /usr/share/lxqt
+
+ -- Alf Gaida <agaida@siduction.org>  Thu, 10 Oct 2019 23:34:49 +0200
+
+lxqt-globalkeys (0.14.1+git20190923-0ubuntu1) eoan; urgency=medium
+
+  * Picked the latest git.
+
+ -- Raman Sarda <theloudspeaker@lubuntu.me>  Tue, 08 Oct 2019 03:27:38 +0530
+lxqt-globalkeys (0.14.1-1) unstable; urgency=medium
+
+  * Cherry-picking new upstream version 0.14.1.
+  * Bumped minimum version liblxqt0-dev (>= 0.14.1~)
+  * Extended the long descriptions a bit
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 24 Feb 2019 21:28:30 +0100
 
 lxqt-globalkeys (0.14.1-0ubuntu4) eoan; urgency=medium
 
@@ -36,6 +72,20 @@ lxqt-globalkeys (0.14.1-0ubuntu1) disco; urgency=medium
   * New upstream release.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 09 Mar 2019 13:06:02 -0600
+lxqt-globalkeys (0.14.0-1) unstable; urgency=medium
+
+  * Cherry-picking new upstream version 0.14.0.
+  * Bumped Standards to 4.3.0, no changes needed
+  * Dropped d/compat, use debhelper-compat = 12, no changes needed
+  * Fixed years in d/copyright
+  * Bumped minimum version liblxqt0-dev (>= 0.14.0~)
+  * Removed obsolete PULL_TRANSLATIONS= OFF from dh_auto_configure
+  * Added Build-Depends-Package fields to symbols
+  * Added l10n-package, moved from lxqt-l10n
+  * Added build dependency xserver-xorg-input-libinput-dev
+  * Added d/upstream/metadata
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 27 Jan 2019 17:37:07 +0100
 
 lxqt-globalkeys (0.14.0-0ubuntu1) disco; urgency=medium
 
@@ -46,6 +96,12 @@ lxqt-globalkeys (0.14.0-0ubuntu1) disco; urgency=medium
   * Add a lxqt-globalkeys-l10n package.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 26 Jan 2019 00:15:52 -0600
+lxqt-globalkeys (0.13.0-1) unstable; urgency=medium
+
+  * Cherry-picking new upstream version 0.13.0.
+  * Bumped build dependency liblxqt0-dev to >= 0.13.0~
+
+ -- Alf Gaida <agaida@siduction.org>  Thu, 24 May 2018 21:23:58 +0200
 
 lxqt-globalkeys (0.13.0-0ubuntu2) cosmic; urgency=medium
 
