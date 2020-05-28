@@ -6,6 +6,7 @@ lxqt-globalkeys (0.15.0-0ubuntu1) UNRELEASED; urgency=medium
   * Bump Standards-version to 4.5.0, no changes needed.
   * debhelper -> debhelper-compat.
   * Run wrap-and-sort.
+  * Move ${misc:Pre-Depends} to Pre-Depends.
 
  -- Simon Quigley <tsimonq2@ubuntu.com>  Tue, 28 Apr 2020 18:29:03 -0500
 
