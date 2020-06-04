@@ -1,4 +1,4 @@
-lxqt-globalkeys (0.15.0-0ubuntu1) UNRELEASED; urgency=medium
+lxqt-globalkeys (0.15.0-0ubuntu1) groovy; urgency=medium
 
   * New upstream release.
     - Update upstream signing key.
@@ -8,7 +8,7 @@ lxqt-globalkeys (0.15.0-0ubuntu1) UNRELEASED; urgency=medium
   * Run wrap-and-sort.
   * Move ${misc:Pre-Depends} to Pre-Depends.
 
- -- Simon Quigley <tsimonq2@ubuntu.com>  Tue, 28 Apr 2020 18:29:03 -0500
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Thu, 04 Jun 2020 13:58:05 -0500
 
 lxqt-globalkeys (0.14.3-1ubuntu1) focal; urgency=low
 
