@@ -1,4 +1,5 @@
 liblxqt-globalkeys-ui.so.0 liblxqt-globalkeys-ui0 #MINVER#
+* Build-Depends-Package: liblxqt0-globalkeys-ui0-dev
  (c++)"ShortcutSelector::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.8.0
  (c++)"ShortcutSelector::qt_metacast(char const*)@Base" 0.8.0
  (c++)"ShortcutSelector::grabShortcut(int)@Base" 0.8.0

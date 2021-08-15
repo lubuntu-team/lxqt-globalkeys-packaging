@@ -8,12 +8,12 @@ Section: x11
 Priority: optional
 Build-Depends: debhelper-compat (= 13),
                libkf5windowsystem-dev,
-               liblxqt0-dev (>= 0.16.0~),
+               liblxqt0-dev (>= 0.17.0),
                libqt5svg5-dev,
                libqt5x11extras5-dev,
                libx11-dev,
                xserver-xorg-input-libinput-dev
-Standards-Version: 4.5.0
+Standards-Version: 4.5.1
 Vcs-Browser: https://phab.lubuntu.me/source/lxqt-globalkeys/
 Vcs-Git: https://phab.lubuntu.me/source/lxqt-globalkeys.git
 XS-Debian-Vcs-Browser: https://salsa.debian.org/lxqt-team/lxqt-globalkeys
@@ -87,4 +87,6 @@ Depends: qttranslations5-l10n, ${misc:Depends}
 Breaks: lxqt-globalkeys (<< 0.11.0)
 Replaces: lxqt-globalkeys (<< 0.11.0)
 Description: Language package for lxqt-globalkeys
+ The l10n files for lxqt-globalkeys.
+ .
  This package contains the l10n files needed by lxqt-globalkeys.

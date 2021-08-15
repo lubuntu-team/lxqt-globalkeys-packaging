@@ -1,4 +1,5 @@
 liblxqt-globalkeys.so.0 liblxqt-globalkeys0 #MINVER#
+* Build-Depends-Package: liblxqt-globalkeys0-dev
  (c++)"GlobalKeyShortcut::Action::qt_metacall(QMetaObject::Call, int, void**)@Base" 0.8.0
  (c++)"GlobalKeyShortcut::Action::qt_metacast(char const*)@Base" 0.8.0
  (c++)"GlobalKeyShortcut::Action::changeShortcut(QString const&)@Base" 0.8.0
