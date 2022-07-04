@@ -1,3 +1,9 @@
+lxqt-globalkeys (1.1.0-0ubuntu1~ppa1) jammy; urgency=medium
+
+  * Backport to Jammy.
+
+ -- Aaron Rainbolt <arraybolt3@gmail.com>  Mon, 04 Jul 2022 06:38:35 -0500
+
 lxqt-globalkeys (1.1.0-0ubuntu1) kinetic; urgency=medium
 
   * New upstream release.
