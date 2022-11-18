@@ -1,11 +1,11 @@
-lxqt-globalkeys (1.2.0-0ubuntu1) UNRELEASED; urgency=medium
+lxqt-globalkeys (1.2.0-0ubuntu1) lunar; urgency=medium
 
   * New upstream version.
   * Fix the watch file, for real this time.
   * Lubuntuify the package slightly, to make debhelper happy.
   * Bump build dependencies in debian/control.
 
- -- Simon Quigley <tsimonq2@ubuntu.com>  Fri, 18 Nov 2022 14:44:25 -0600
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Fri, 18 Nov 2022 15:07:21 -0600
 
 lxqt-globalkeys (1.1.0-1) experimental; urgency=medium
 
