@@ -1,5 +1,6 @@
 Source: lxqt-globalkeys
-Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
+Maintainer: Lubuntu Developers <lubuntu-devel@lists.ubuntu.com>
+XSBC-Original-Maintainer: LXQt Packaging Team <pkg-lxqt-devel@lists.alioth.debian.org>
 Uploaders: Alf Gaida <agaida@siduction.org>,
            ChangZhuo Chen (陳昌倬) <czchen@debian.org>,
            Andrew Lee (李健秋) <ajqlee@debian.org>,
@@ -15,8 +16,10 @@ Build-Depends: debhelper-compat (= 13),
                libx11-dev,
                xserver-xorg-input-libinput-dev
 Standards-Version: 4.6.1
-Vcs-Browser: https://salsa.debian.org/lxqt-team/lxqt-globalkeys
-Vcs-Git: https://salsa.debian.org/lxqt-team/lxqt-globalkeys.git
+Vcs-Browser: https://git.lubuntu.me/Lubuntu/lxqt-globalkeys-packaging
+Vcs-Git: https://git.lubuntu.me/Lubuntu/lxqt-globalkeys-packaging.git
+XS-Debian-Vcs-Browser: https://salsa.debian.org/lxqt-team/lxqt-globalkeys
+XS-Debian-Vcs-Git: https://salsa.debian.org/lxqt-team/lxqt-globalkeys.git
 Homepage: https://github.com/lxqt/lxqt-globalkeys
 Rules-Requires-Root: no
 
