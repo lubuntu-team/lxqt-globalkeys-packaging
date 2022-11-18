@@ -1,71 +1,23 @@
-lxqt-globalkeys (1.1.0-0ubuntu1) kinetic; urgency=medium
+lxqt-globalkeys (1.1.0-1) experimental; urgency=medium
 
   * New upstream release.
-  * Bump build dependencies.
-  * Ah yes, symbols. 🤦
-  * Lots of package renaming too, due to the SONAME bump.
+  * Cleaned up gbp.conf trailing whitespace.
+  * Upstreamed compatible changes from Ubuntu, modifying the following files:
+    - control
+    - copyright
+    - *.install
+    - *.symbols
+    - lxqt-globalkeys.lintian-overrides
+    - rules
+    - upstream/*
 
- -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 01 Jun 2022 15:39:25 -0500
-
-lxqt-globalkeys (0.17.0-0ubuntu1) impish; urgency=medium
-
-  * New upstream release 0.17.0
-  * Update debian/control
-    - Bump Standards-Version to 4.5.1
-    - Use liblxqt0-dev 0.17.0
-  * Add Build-Depends-Package metadata field to symbols files
-  * Rename tag for lintian override
-  * Extend lxqt-globalkeys-l10n package description
-  * Update debian/copyright
-
- -- apt-ghetto <apt-ghetto@protonmail.com>  Fri, 13 Aug 2021 10:36:06 +0200
-
-lxqt-globalkeys (0.16.0-1ubuntu1) hirsute; urgency=medium
-
-  * New upstream version.
-  * debhelper-compat requirement bumped to 13.
-
- -- Raman Sarda <theloudspeaker@disroot.org>  Mon, 22 Feb 2021 00:38:07 +0530
+ -- Aaron Rainbolt <arraybolt3@gmail.com>  Wed, 13 Jul 2022 13:02:01 -0500
 
 lxqt-globalkeys (0.16.0-1) unstable; urgency=medium
 
   * New upstream release. (Closes: #964648)
 
  -- Andrew Lee (李健秋) <ajqlee@debian.org>  Wed, 06 Jan 2021 17:04:29 +0800
-
-lxqt-globalkeys (0.15.0-0ubuntu1) groovy; urgency=medium
-
-  * New upstream release.
-    - Update upstream signing key.
-    - Bump LXQt build dependencies.
-  * Bump Standards-version to 4.5.0, no changes needed.
-  * debhelper -> debhelper-compat.
-  * Run wrap-and-sort.
-  * Move ${misc:Pre-Depends} to Pre-Depends.
-
- -- Simon Quigley <tsimonq2@ubuntu.com>  Thu, 04 Jun 2020 13:58:05 -0500
-
-lxqt-globalkeys (0.14.3-1ubuntu1) focal; urgency=low
-
-  * Merge from Debian unstable. Remaining changes:
-   - Modified lxqt-globalkeys.install to include ubuntu specific changes.
-     The changes install default config file to another location so that distribution specific config files provided via xdg take precedence.
-   - new dependencies in control file.
-   - Translations from debian for following:
-     1. config/translations/lxqt-config-globalkeyshortcuts_cs.ts
-     2. config/translations/lxqt-config-globalkeyshortcuts_da.ts
-     3. config/translations/lxqt-config-globalkeyshortcuts_de.ts
-     4. config/translations/lxqt-config-globalkeyshortcuts_el.ts
-     5. config/translations/lxqt-config-globalkeyshortcuts_gl.ts
-     6. config/translations/lxqt-config-globalkeyshortcuts_gl.ts
-     7. config/translations/lxqt-config-globalkeyshortcuts_ja.ts
-     8. config/translations/lxqt-config-globalkeyshortcuts_it.ts
-     9. config/translations/lxqt-config-globalkeyshortcuts_nb_NO.ts
-     10. config/translations/lxqt-config-globalkeyshortcuts_pt.ts
-     11. config/translations/lxqt-config-globalkeyshortcuts_pt_BR.ts
-   - Removed an unncessary patch.
-
- -- Raman Sarda <theloudspeaker@lubuntu.me>  Tue, 07 Jan 2020 19:26:41 +0530
 
 lxqt-globalkeys (0.14.3-1) unstable; urgency=medium
 
@@ -82,12 +34,6 @@ lxqt-globalkeys (0.14.2-1) unstable; urgency=medium
 
  -- Alf Gaida <agaida@siduction.org>  Thu, 10 Oct 2019 23:34:49 +0200
 
-lxqt-globalkeys (0.14.1+git20190923-0ubuntu1) eoan; urgency=medium
-
-  * Picked the latest git.
-
- -- Raman Sarda <theloudspeaker@lubuntu.me>  Tue, 08 Oct 2019 03:27:38 +0530
-
 lxqt-globalkeys (0.14.1-1) unstable; urgency=medium
 
   * Cherry-picking new upstream version 0.14.1.
@@ -95,31 +41,6 @@ lxqt-globalkeys (0.14.1-1) unstable; urgency=medium
   * Extended the long descriptions a bit
 
  -- Alf Gaida <agaida@siduction.org>  Sun, 24 Feb 2019 21:28:30 +0100
-
-lxqt-globalkeys (0.14.1-0ubuntu4) eoan; urgency=medium
-
-  * Correctly changed the location of upstream config.
-
- -- Raman Sarda <theloudspeaker@lubuntu.me>  Thu, 05 Sep 2019 22:35:29 +0000
-
-lxqt-globalkeys (0.14.1-0ubuntu3) eoan; urgency=medium
-
-  * Changed the location of upstream config.
-
- -- Raman Sarda <theloudspeaker@lubuntu.me>  Wed, 04 Sep 2019 23:15:09 +0530
-
-lxqt-globalkeys (0.14.1-0ubuntu2) eoan; urgency=medium
-
-  * Add XDG support.
-  * Bump Standards-Version to 4.4.0, no changes needed.
-
- -- Walter Lapchynski <wxl@ubuntu.com>  Tue, 20 Aug 2019 22:46:08 -0700
-
-lxqt-globalkeys (0.14.1-0ubuntu1) disco; urgency=medium
-
-  * New upstream release.
-
- -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 09 Mar 2019 13:06:02 -0600
 
 lxqt-globalkeys (0.14.0-1) unstable; urgency=medium
 
@@ -136,50 +57,12 @@ lxqt-globalkeys (0.14.0-1) unstable; urgency=medium
 
  -- Alf Gaida <agaida@siduction.org>  Sun, 27 Jan 2019 17:37:07 +0100
 
-lxqt-globalkeys (0.14.0-0ubuntu1) disco; urgency=medium
-
-  * New upstream release.
-    - Bump build dependencies.
-  * Bump Standards-version to 4.3.0, no changes needed.
-  * Bump debhelper compat to 12, no changes needed.
-  * Add a lxqt-globalkeys-l10n package.
-
- -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 26 Jan 2019 00:15:52 -0600
-
 lxqt-globalkeys (0.13.0-1) unstable; urgency=medium
 
   * Cherry-picking new upstream version 0.13.0.
   * Bumped build dependency liblxqt0-dev to >= 0.13.0~
 
  -- Alf Gaida <agaida@siduction.org>  Thu, 24 May 2018 21:23:58 +0200
-
-lxqt-globalkeys (0.13.0-0ubuntu2) cosmic; urgency=medium
-
-  * Provide a more complete default configuration file.
-
- -- Walter Lapchynski <wxl@ubuntu.com>  Sat, 06 Oct 2018 23:26:56 -0700
-
-lxqt-globalkeys (0.13.0-0ubuntu1) cosmic; urgency=medium
-
-  * New upstream release.
-  * Keep the Vcs entries as Lubuntu-specific; drop all other changes.
-  * Update build dependencies.
-
- -- Simon Quigley <tsimonq2@ubuntu.com>  Tue, 22 May 2018 23:29:33 -0500
-
-lxqt-globalkeys (0.12.0-4ubuntu1) cosmic; urgency=medium
-
-  * Merge from Debian Sid. Remaining changes:
-    - Backport two upstream patches:
-      + Fix wrong radio buttons when changing shortcuts.
-        * fix-wrong-radio-buttons.patch
-        * Upstream commit a9ec3c0.
-      + Avoid polluting the the x11 shortcut map.
-        * avoid-polluting-x11-shortcut-map.patch
-        * Upstream commit c79d560.
-  * Change the Vcs entries to be Lubuntu-specific.
-
- -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 19 May 2018 17:37:34 -0500
 
 lxqt-globalkeys (0.12.0-4) unstable; urgency=medium
 
@@ -191,19 +74,6 @@ lxqt-globalkeys (0.12.0-4) unstable; urgency=medium
   * Bumped years in copyright
 
  -- Alf Gaida <agaida@siduction.org>  Sat, 28 Apr 2018 13:53:23 +0200
-
-lxqt-globalkeys (0.12.0-3ubuntu1) bionic; urgency=medium
-
-  * Cherry-pick some upstream commits because the upstream release cycle is
-    too slow:
-    - Fix wrong radio buttons when changing shortcuts.
-      + fix-wrong-radio-buttons.patch
-      + Upstream commit a9ec3c0.
-    - Avoid polluting the the x11 shortcut map.
-      + avoid-polluting-x11-shortcut-map.patch
-      + Upstream commit c79d560.
-
- -- Simon Quigley <tsimonq2@ubuntu.com>  Mon, 05 Feb 2018 21:19:18 -0600
 
 lxqt-globalkeys (0.12.0-3) unstable; urgency=medium
 
@@ -361,4 +231,3 @@ lxqt-globalkeys (0.9.0+20150806-1) unstable; urgency=low
   * Use lower-case for description.
 
  -- Andrew Lee (李健秋) <ajqlee@debian.org>  Sun, 16 Aug 2015 02:18:03 +0800
-
