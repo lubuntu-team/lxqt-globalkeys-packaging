@@ -1,3 +1,9 @@
+lxqt-globalkeys (1.4.0-0ubuntu1~ppa1) jammy; urgency=medium
+
+  * Backport to Jammy.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Sun, 12 Nov 2023 18:14:55 -0600
+
 lxqt-globalkeys (1.4.0-0ubuntu1) noble; urgency=medium
 
   * New upstream release.
