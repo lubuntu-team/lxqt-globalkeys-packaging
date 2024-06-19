@@ -1,6 +1,6 @@
 # SymbolsHelper-Confirmed: 1.1.0 amd64
-liblxqt-globalkeys.so.1 liblxqt-globalkeys1 #MINVER#
-* Build-Depends-Package: liblxqt-globalkeys1-dev
+liblxqt-globalkeys.so.2 liblxqt-globalkeys2 #MINVER#
+* Build-Depends-Package: liblxqt-globalkeys2-dev
  (c++)"GlobalKeyShortcut::Action::Action(QObject*)@Base" 0.8.0
  (c++)"GlobalKeyShortcut::Action::activated()@Base" 0.8.0
  (c++)"GlobalKeyShortcut::Action::changeDescription(QString const&)@Base" 0.8.0

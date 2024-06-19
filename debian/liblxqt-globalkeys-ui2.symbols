@@ -1,6 +1,6 @@
 # SymbolsHelper-Confirmed: 1.1.0 amd64
-liblxqt-globalkeys-ui.so.1 liblxqt-globalkeys-ui1 #MINVER#
-* Build-Depends-Package: liblxqt0-globalkeys-ui1-dev
+liblxqt-globalkeys-ui.so.2 liblxqt-globalkeys-ui2 #MINVER#
+* Build-Depends-Package: liblxqt-globalkeys-ui2-dev
  (c++)"ShortcutSelector::ShortcutSelector(QWidget*)@Base" 0.8.0
  (c++)"ShortcutSelector::addMenuAction(QString const&)@Base" 0.8.0
  (c++)"ShortcutSelector::cancelNow()@Base" 0.8.0
