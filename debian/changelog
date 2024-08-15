@@ -1,4 +1,4 @@
-lxqt-globalkeys (2.0.0-0ubuntu1~ppa1) oracular; urgency=medium
+lxqt-globalkeys (2.0.0-0ubuntu1) oracular; urgency=medium
 
   * New upstream release.
   * Update copyright file.
@@ -6,7 +6,7 @@ lxqt-globalkeys (2.0.0-0ubuntu1~ppa1) oracular; urgency=medium
   * Rename and soname-bump library packages.
   * Update build dependencies.
 
- -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Tue, 18 Jun 2024 19:52:57 -0500
+ -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Thu, 15 Aug 2024 16:20:09 -0500
 
 lxqt-globalkeys (1.4.0-0ubuntu1) noble; urgency=medium
 
