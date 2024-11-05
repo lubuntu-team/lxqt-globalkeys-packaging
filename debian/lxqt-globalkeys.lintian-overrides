@@ -4,3 +4,6 @@ lxqt-globalkeys: no-manual-page [usr/bin/lxqt-globalkeysd]
 
 # category not yet in freedesktop
 lxqt-globalkeys: desktop-entry-invalid-category LXQt [usr/share/applications/lxqt-config-globalkeyshortcuts.desktop]
+
+# This will not be fixed in the near future
+lxqt-globalkeys: desktop-entry-lacks-keywords-entry [usr/share/applications/lxqt-config-globalkeyshortcuts.desktop]
