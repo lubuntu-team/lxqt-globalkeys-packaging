@@ -1,4 +1,4 @@
-lxqt-globalkeys (2.3.0-0ubuntu1) UNRELEASED; urgency=medium
+lxqt-globalkeys (2.3.0-0ubuntu1) resolute; urgency=medium
 
   * New upstream release.
     - Bump build dependencies.
@@ -6,7 +6,7 @@ lxqt-globalkeys (2.3.0-0ubuntu1) UNRELEASED; urgency=medium
   * Update Standards-Version to 4.7.3, no changes needed.
   * Remove redundant 'Rules-Requires-Root: no' control line.
 
- -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Tue, 20 Jan 2026 16:15:47 -0600
+ -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Tue, 20 Jan 2026 16:21:02 -0600
 
 lxqt-globalkeys (2.2.0-0ubuntu1) questing; urgency=medium
 
