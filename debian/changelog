@@ -1,3 +1,9 @@
+lxqt-globalkeys (2.3.0-0ubuntu1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Tue, 20 Jan 2026 16:15:47 -0600
+
 lxqt-globalkeys (2.2.0-0ubuntu1) questing; urgency=medium
 
   * New upstream release.
