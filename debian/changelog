@@ -7,7 +7,7 @@ lxqt-globalkeys (2.3.0-0ubuntu1) resolute; urgency=medium
   * Remove redundant 'Rules-Requires-Root: no' control line.
   * Fix typo in conffile install location. (LP: #2135047)
 
- -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Mon, 26 Jan 2026 17:00:46 -0600
+ -- Aaron Rainbolt <arraybolt3@ubuntu.com>  Thu, 19 Feb 2026 14:53:09 -0500
 
 lxqt-globalkeys (2.2.0-0ubuntu1) questing; urgency=medium
 
