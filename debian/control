@@ -37,8 +37,6 @@ Multi-Arch: same
 Section: libs
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Breaks: liblxqt-globalkeys1
-Replaces: liblxqt-globalkeys1
 Description: daemon used to register global keyboard shortcuts (shared libs)
  Daemon used to register global keyboard shortcuts.
  .
@@ -50,8 +48,6 @@ Section: libdevel
 Depends: liblxqt-globalkeys2 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
-Breaks: liblxqt-globalkeys1-dev
-Replaces: liblxqt-globalkeys1-dev
 Description: daemon used to register global keyboard shortcuts (dev files)
  Daemon used to register global keyboard shortcuts.
  .
@@ -65,8 +61,6 @@ Pre-Depends: ${misc:Pre-Depends}
 Depends: liblxqt-globalkeys2 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
-Breaks: liblxqt-globalkeys-ui1
-Replaces: liblxqt-globalkeys-ui1
 Description: daemon used to register global keyboard shortcuts (ui files)
  Daemon used to register global keyboard shortcuts.
  .
@@ -78,8 +72,6 @@ Section: libdevel
 Depends: liblxqt-globalkeys-ui2 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
-Breaks: liblxqt-globalkeys-ui1-dev
-Replaces: liblxqt-globalkeys-ui1-dev
 Description: daemon used to register global keyboard shortcuts (ui dev files)
  Daemon used to register global keyboard shortcuts.
  .
