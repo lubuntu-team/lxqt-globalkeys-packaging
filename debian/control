@@ -7,7 +7,6 @@ Uploaders: Alf Gaida <agaida@siduction.org>,
            Simon Quigley <tsimonq2@debian.org>,
            Aaron Rainbolt <arraybolt3@gmail.com>
 Section: x11
-Priority: optional
 Build-Depends: debhelper-compat (= 13),
                libkf6windowsystem-dev,
                liblxqt2-dev (>= 2.3.0),
@@ -15,7 +14,7 @@ Build-Depends: debhelper-compat (= 13),
                libxkbcommon-dev (>= 0.5.0),
                qt6-svg-dev (>= 6.6.0),
                xserver-xorg-input-libinput-dev
-Standards-Version: 4.7.3
+Standards-Version: 4.7.4
 Vcs-Browser: https://git.lubuntu.me/Lubuntu/lxqt-globalkeys-packaging
 Vcs-Git: https://git.lubuntu.me/Lubuntu/lxqt-globalkeys-packaging.git
 Debian-Vcs-Browser: https://salsa.debian.org/lxqt-team/lxqt-globalkeys
