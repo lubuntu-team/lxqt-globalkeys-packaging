@@ -7,7 +7,7 @@ Uploaders: Alf Gaida <agaida@siduction.org>,
            Simon Quigley <tsimonq2@debian.org>,
            Aaron Rainbolt <arraybolt3@gmail.com>
 Section: x11
-Build-Depends: debhelper-compat (= 13),
+Build-Depends: debhelper-compat (= 14),
                libkf6windowsystem-dev,
                liblxqt2-dev (>= 2.5.0),
                libx11-dev,
@@ -23,7 +23,6 @@ Homepage: https://github.com/lxqt/lxqt-globalkeys
 
 Package: lxqt-globalkeys
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}
 Recommends: lxqt-globalkeys-l10n, lxqt-qtplugin, lxqt-session
 Suggests: lxqt | lxqt-core
 Description: daemon used to register global keyboard shortcuts (appl.)
@@ -35,8 +34,6 @@ Package: liblxqt-globalkeys2
 Architecture: any
 Multi-Arch: same
 Section: libs
-Pre-Depends: ${misc:Pre-Depends}
-Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: daemon used to register global keyboard shortcuts (shared libs)
  Daemon used to register global keyboard shortcuts.
  .
@@ -45,9 +42,7 @@ Description: daemon used to register global keyboard shortcuts (shared libs)
 Package: liblxqt-globalkeys2-dev
 Architecture: any
 Section: libdevel
-Depends: liblxqt-globalkeys2 (= ${binary:Version}),
-         ${misc:Depends},
-         ${shlibs:Depends}
+Depends: liblxqt-globalkeys2 (= ${binary:Version})
 Description: daemon used to register global keyboard shortcuts (dev files)
  Daemon used to register global keyboard shortcuts.
  .
@@ -57,10 +52,7 @@ Package: liblxqt-globalkeys-ui2
 Architecture: any
 Multi-Arch: same
 Section: libs
-Pre-Depends: ${misc:Pre-Depends}
-Depends: liblxqt-globalkeys2 (= ${binary:Version}),
-         ${misc:Depends},
-         ${shlibs:Depends}
+Depends: liblxqt-globalkeys2 (= ${binary:Version})
 Description: daemon used to register global keyboard shortcuts (ui files)
  Daemon used to register global keyboard shortcuts.
  .
@@ -69,9 +61,7 @@ Description: daemon used to register global keyboard shortcuts (ui files)
 Package: liblxqt-globalkeys-ui2-dev
 Architecture: any
 Section: libdevel
-Depends: liblxqt-globalkeys-ui2 (= ${binary:Version}),
-         ${misc:Depends},
-         ${shlibs:Depends}
+Depends: liblxqt-globalkeys-ui2 (= ${binary:Version})
 Description: daemon used to register global keyboard shortcuts (ui dev files)
  Daemon used to register global keyboard shortcuts.
  .
@@ -81,7 +71,7 @@ Package: lxqt-globalkeys-l10n
 Architecture: all
 Multi-Arch: foreign
 Section: localization
-Depends: qt6-translations-l10n, ${misc:Depends}
+Depends: qt6-translations-l10n
 Description: Language package for lxqt-globalkeys
  The l10n files for lxqt-globalkeys.
  .
